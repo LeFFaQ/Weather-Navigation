@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.FragmentWeather"
+    android:background="?attr/colorOnPrimary">
+
+    <LinearLayout
+        android:id="@+id/temp_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="96dp"
+        android:gravity="center|bottom">
+
+        <TextView
+            android:id="@+id/left_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/demo_temp"
+            android:theme="@style/Widget.AppCompat.TextView.Temp.Assist"
+            app:drawableRightCompat="@drawable/ic_arrow_down" />
+
+        <TextView
+            android:id="@+id/center_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            android:text="@string/demo_temp"
+            android:theme="@style/Widget.AppCompat.TextView.Temp.Center" />
+
+        <TextView
+            android:id="@+id/right_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/demo_temp"
+            android:theme="@style/Widget.AppCompat.TextView.Temp.Assist"
+            app:drawableRightCompat="@drawable/ic_arrow_up" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/temp_ll"
+        android:layout_marginTop="76dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/wi_cloudy"
+            app:tint="?attr/colorOnSecondary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cloudy"
+            android:theme="@style/Widget.AppCompat.TextView.Temp.Assist"/>
+    </LinearLayout>
+</RelativeLayout>

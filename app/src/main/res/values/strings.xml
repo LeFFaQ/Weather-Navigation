@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Weather Navigation</string>
+    <string name="demo_temp">3C°</string>
+</resources>
