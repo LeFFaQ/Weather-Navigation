@@ -22,17 +22,19 @@
             android:layout_height="wrap_content"
             android:text="@string/demo_temp"
             android:theme="@style/Widget.AppCompat.TextView.Temp.Assist"
-            app:drawableRightCompat="@drawable/ic_arrow_down" />
+            app:drawableRightCompat="@drawable/ic_arrow_down"
+            android:layout_gravity="bottom|center"/>
 
         <TextView
             android:id="@+id/center_temp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginRight="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
             android:text="@string/demo_temp"
+            android:layout_gravity="bottom|center"
             android:theme="@style/Widget.AppCompat.TextView.Temp.Center" />
 
         <TextView
@@ -41,7 +43,8 @@
             android:layout_height="wrap_content"
             android:text="@string/demo_temp"
             android:theme="@style/Widget.AppCompat.TextView.Temp.Assist"
-            app:drawableRightCompat="@drawable/ic_arrow_up" />
+            app:drawableRightCompat="@drawable/ic_arrow_up"
+            android:layout_gravity="bottom|center"/>
 
     </LinearLayout>
 
@@ -66,4 +69,6 @@
             android:text="Cloudy"
             android:theme="@style/Widget.AppCompat.TextView.Temp.Assist"/>
     </LinearLayout>
+
+
 </RelativeLayout>

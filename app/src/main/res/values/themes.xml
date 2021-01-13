@@ -17,15 +17,17 @@
 
     <style name="Widget.AppCompat.TextView.Temp.Center" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">64sp</item>
+        <item name="android:textSize">60sp</item>
         <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/nunito_regular</item>
     </style>
 
     <style name="Widget.AppCompat.TextView.Temp.Assist" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:gravity">center</item>
         <item name="drawableTint">@color/black</item>
+        <item name="android:fontFamily">@font/nunito_regular</item>
     </style>
 
 </resources>

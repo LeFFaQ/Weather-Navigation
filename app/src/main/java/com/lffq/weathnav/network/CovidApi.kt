@@ -16,7 +16,8 @@ interface WeatherApi {
     @GET("/data/2.5/weather")
     fun byCityName(
             @Query("q") City: String,
-            @Query("appid") ApiKey: String = Constants.appid
+            @Query("appid") ApiKey: String = Constants.appid,
+            @Query("units") metrics: String = Constants.metric
     ): Observable<Current>
 
     //Current Weather
@@ -24,7 +25,8 @@ interface WeatherApi {
     fun byLatLon(
             @Query("lat") latitude: Double,
             @Query("lon") longitude: Double,
-            @Query("appid") ApiKey: String = Constants.appid
+            @Query("appid") apiKey: String = Constants.appid,
+            @Query("units") metrics: String = Constants.metric
             ): Observable<Current>
 
     companion object Factory {
@@ -32,7 +34,7 @@ interface WeatherApi {
             val retrofit = Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("https://http://api.openweathermap.org/")
+                .baseUrl("https://api.openweathermap.org/")
                 .build()
 
             return retrofit.create(WeatherApi::class.java);
