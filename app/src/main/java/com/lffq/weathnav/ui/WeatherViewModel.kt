@@ -1,32 +1,23 @@
 package com.lffq.weathnav.ui
 
 import android.annotation.SuppressLint
-import android.content.ContentValues.TAG
 import android.util.Log
+
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.lffq.weathnav.model.Current
-import com.lffq.weathnav.network.RepositoryProvider
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
+import com.lffq.weathnav.repository.MainActivityRepo
 
 class WeatherViewModel : ViewModel() {
 
-    var current = MutableLiveData<Current>()
+    var current: MutableLiveData<Current>? = null
 
     @SuppressLint("CheckResult")
-    fun getByLocation() {
-
-        val repository = RepositoryProvider.provideSearchRepository()
-        repository.latlon(55.354968, 86.087314)
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeOn(Schedulers.io())
-            .subscribe({ result ->
-                Log.d(TAG, "getByLocation: ${result.main?.temp}")
-                current.value = result
-            }, { error ->
-                error.printStackTrace()
-            })
+    fun getByLocation(): LiveData<Current>? {
+        current = MainActivityRepo.getCurrentWeather(55.354968, 86.087314)
+        Log.d("123", "Viewmodel: ${current!!.value?.main?.temp}")
+        return current
     }
 
 
