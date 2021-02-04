@@ -98,10 +98,10 @@ data class Clouds(
 data class Main(
 
 	@field:SerializedName("temp")
-	val temp: Double? = null,
+	val temp: Int? = null,
 
 	@field:SerializedName("temp_min")
-	val tempMin: Double? = null,
+	val tempMin: Int? = null,
 
 	@field:SerializedName("humidity")
 	val humidity: Int? = null,
@@ -110,10 +110,10 @@ data class Main(
 	val pressure: Int? = null,
 
 	@field:SerializedName("feels_like")
-	val feelsLike: Double? = null,
+	val feelsLike: Int? = null,
 
 	@field:SerializedName("temp_max")
-	val tempMax: Double? = null
+	val tempMax: Int? = null
 ) : Parcelable
 
 @Parcelize

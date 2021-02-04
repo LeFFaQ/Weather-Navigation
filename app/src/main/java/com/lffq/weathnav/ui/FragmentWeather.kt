@@ -5,18 +5,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.navGraphViewModels
-import com.lffq.weathnav.Constants
 import com.lffq.weathnav.Constants.TAG
 import com.lffq.weathnav.R
 import com.lffq.weathnav.databinding.WeatherFragmentBinding
 import com.lffq.weathnav.model.Current
-
 
 class FragmentWeather : Fragment(R.layout.weather_fragment) {
 
