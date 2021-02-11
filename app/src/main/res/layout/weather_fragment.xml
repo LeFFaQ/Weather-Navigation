@@ -27,7 +27,7 @@
                 android:id="@+id/left_temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{viewmodel.tempMin.toString()}"
+                android:text="@{viewmodel.currentData.main.tempMin.toString()}"
                 android:theme="@style/Widget.AppCompat.TextView.Temp.Assist"
                 app:drawableRightCompat="@drawable/ic_arrow_down"
                 android:layout_gravity="bottom|center" />
@@ -39,14 +39,14 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginEnd="40dp"
                 android:layout_marginRight="40dp"
-                android:text="@{viewmodel.current.main.temp.toString()}"
+                android:text="@{viewmodel.currentData.main.temp.toString()}"
                 android:layout_gravity="bottom|center"
                 android:theme="@style/Widget.AppCompat.TextView.Temp.Center" />
             <TextView
                 android:id="@+id/right_temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{viewmodel.current.main.tempMin.toString()}"
+                android:text="@{viewmodel.currentData.main.tempMax.toString()}"
                 android:theme="@style/Widget.AppCompat.TextView.Temp.Assist"
                 app:drawableRightCompat="@drawable/ic_arrow_up"
                 android:layout_gravity="bottom|center" />
@@ -72,7 +72,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{viewmodel.current.weather.get(0).description}"
+                android:text="@{viewmodel.currentData.weather.get(0).description}"
                 android:theme="@style/Widget.AppCompat.TextView.Temp.Assist" />
         </LinearLayout>
 
@@ -85,7 +85,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{viewmodel.cityFormatter().toString()}"
+                android:text=""
                 android:theme="@style/Widget.AppCompat.TextView.Temp.Assist"
                 app:drawableTopCompat="@drawable/ic_location" />
         </LinearLayout>

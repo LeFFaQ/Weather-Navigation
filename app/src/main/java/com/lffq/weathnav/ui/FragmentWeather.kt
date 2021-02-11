@@ -22,19 +22,11 @@ class FragmentWeather : Fragment(R.layout.weather_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewmodel?.getByLocation()!!.observe(viewLifecycleOwner, { current ->
+        viewmodel?.getCurrentWeather(55.354968, 86.087314)!!.observe(viewLifecycleOwner, { current ->
 
             Log.d(TAG, "Current, Fragment: ${current.main?.temp}")
             Log.d(TAG, "Current, Fragment: ${current.main?.feelsLike}")
             Log.d(TAG, "Current, Fragment: ${current.name}")
-
-            viewmodel?.cityFormatter(current.sys?.country.toString(), current.name.toString())
-            viewmodel?.apply {
-                temp = current.main?.temp.toString()
-                tempMax = current.main?.tempMax?.toInt().toString()
-                tempMin = current.main?.tempMin?.toInt().toString()
-            }
-            Log.d(TAG, "onViewCreated: ${viewmodel?.temp}")
         })
     }
 
