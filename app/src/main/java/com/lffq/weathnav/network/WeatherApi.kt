@@ -33,7 +33,7 @@ interface WeatherApi {
             val retrofit = Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("https://api.openweathermap.org/")
+                .baseUrl("http://api.openweathermap.org/")
                 .build()
 
             return retrofit.create(WeatherApi::class.java);
