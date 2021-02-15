@@ -14,10 +14,11 @@ class WeatherViewModel : ViewModel() {
 
 
     var currentData = MutableLiveData<Current>()
-    var formattedCity = MutableLiveData<String>()
 
-    fun cityFormatter(country: String, city: String) {
-        formattedCity.value = "$country, $city"
+    fun cityFormatter(country: String, city: String): String {
+        val formatted = "$country, $city"
+
+        return formatted
     }
 
     @SuppressLint("CheckResult")
@@ -30,10 +31,6 @@ class WeatherViewModel : ViewModel() {
                 .subscribe({ result ->
                     Log.d(ContentValues.TAG, "getByLocation: ${result.main?.temp}")
                     currentData.value = result
-                    cityFormatter(
-                        result.sys?.country.toString(),
-                        result.name.toString()
-                    )
 
                 }, { error ->
                     error.printStackTrace()
