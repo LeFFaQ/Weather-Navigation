@@ -17,8 +17,9 @@ class  WeatherForecastAdapter(var context: Context?): RecyclerView.Adapter<Weath
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeatherForecastAdapter.MyViewHolder {
         context = parent.context
         val inflater = LayoutInflater.from(context)
-        val itemView = inflater.inflate(R.layout.forecast_item, parent, false) as LinearLayout
-        return MyViewHolder(itemView)
+        //val itemView = inflater.inflate(R.layout.forecast_item, parent, false) as LinearLayout
+        val binding = ForecastItemBinding.inflate(inflater)
+        return MyViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: WeatherForecastAdapter.MyViewHolder, position: Int) {
@@ -30,11 +31,13 @@ class  WeatherForecastAdapter(var context: Context?): RecyclerView.Adapter<Weath
         return 5
     }
 
-    inner class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
+    inner class MyViewHolder(val binding: ForecastItemBinding): RecyclerView.ViewHolder(binding.root) {
+
+        fun bind() {
+            binding.data = this@WeatherForecastAdapter
+        }
         //Элементы интерфейса
-
-
         //init { itemView.setOnClickListener(this) }
 
     }
