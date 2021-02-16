@@ -5,10 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.lffq.weathnav.R
+import com.lffq.weathnav.databinding.ForecastItemBinding
 
 class  WeatherForecastAdapter(var context: Context?): RecyclerView.Adapter<WeatherForecastAdapter.MyViewHolder>() {
+
+    //val binding: ForecastItemBinding = DataBindingUtil.
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeatherForecastAdapter.MyViewHolder {
         context = parent.context
@@ -22,7 +26,7 @@ class  WeatherForecastAdapter(var context: Context?): RecyclerView.Adapter<Weath
 
     }
     override fun getItemCount(): Int {
-        //Метод, возвращающий кол-во полученных элементов (новостей)
+        //Метод, возвращающий кол-во полученных элементов
         return 5
     }
 

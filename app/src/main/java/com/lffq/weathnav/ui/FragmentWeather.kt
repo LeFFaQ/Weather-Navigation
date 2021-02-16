@@ -35,8 +35,6 @@ class FragmentWeather : Fragment(R.layout.weather_fragment) {
             Log.d(TAG, "Current, Fragment: ${current.main?.feelsLike}")
             Log.d(TAG, "Current, Fragment: ${current.name}")
         })
-
-
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
